@@ -20,6 +20,20 @@ class MedicosController < ApplicationController
     end
   end
 
+  def edit
+    @medico = Medico.find(params[:id])
+  end
+
+  def update
+    @medico = Medico.find(params[:id])
+
+    if @medico.update(medico_params)
+      redirect_to @medico
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   private
     def medico_params
       params.require(:medico).permit(:nome_completo, :cpf, :email, :especialidade, :crm)
