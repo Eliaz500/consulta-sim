@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_27_235533) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_28_194044) do
+  create_table "medicos", force: :cascade do |t|
+    t.string "nome_completo"
+    t.string "cpf"
+    t.string "email"
+    t.string "especialidade"
+    t.string "crm"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "pacientes", force: :cascade do |t|
     t.string "nome_completo"
     t.string "data_nascimento"

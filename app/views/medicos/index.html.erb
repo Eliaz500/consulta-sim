@@ -1,0 +1,10 @@
+<h1>Médicos</h1>
+<ul>
+  <% @medicos.each do |medico| %>
+    <li>
+      <%= link_to medico.nome_completo, medico %>
+      </a>
+    </li>
+  <% end %>
+</ul>
+<%= link_to "Novo Médico", new_medico_path %>
