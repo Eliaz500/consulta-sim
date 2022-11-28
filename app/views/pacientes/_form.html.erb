@@ -1,0 +1,46 @@
+<%= form_with model: paciente do |form| %>
+  <div>
+    <%= form.label :nome_completo %><br>
+    <%= form.text_field :nome_completo %>
+    <% paciente.errors.full_messages_for(:nome_completo).each do |message| %>
+    <div>
+      <%= message %>
+    </div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :data_nascimento %><br>
+    <%= form.text_field :data_nascimento %>
+    <% paciente.errors.full_messages_for(:data_nascimento).each do |message| %>
+      <div>
+        <%= message %>
+      </div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :cpf %><br>
+    <%= form.text_field :cpf %>
+    <% paciente.errors.full_messages_for(:cpf).each do |message| %>
+      <div>
+        <%= message %>
+      </div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :email %><br>
+    <%= form.text_field :email %>
+    <% paciente.errors.full_messages_for(:email).each do |message| %>
+      <div>
+        <%= message %>
+      </div>
+    <% end %>
+  </div>
+
+  <div>
+    <br><%= form.submit %>
+  </div>
+<% end %>
+
