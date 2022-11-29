@@ -1,0 +1,26 @@
+<%= form_with model: [ @paciente, @paciente.enderecos.build ] do |form| %>
+  <div>
+    <%= form.label :cep %><br>
+    <%= form.text_field :cep %>
+  </div>
+
+  <div>
+    <%= form.label :cidade %><br>
+    <%= form.text_field :cidade %>
+  </div>
+
+  <div>
+    <%= form.label :bairro %><br>
+    <%= form.text_field :bairro %>
+  </div>
+
+  <div>
+    <%= form.label :cep %><br>
+    <%= form.text_field :cep %>
+  </div>
+
+  <div>
+    <br><%= form.submit %>
+  </div>
+<% end %>
+

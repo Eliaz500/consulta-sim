@@ -9,10 +9,12 @@ class PacientesController < ApplicationController
 
   def new
     @paciente = Paciente.new
+    @paciente.build_endereco
   end
 
   def create
     @paciente = Paciente.new(paciente_params)
+
 
     if @paciente.save
       redirect_to @paciente
@@ -37,7 +39,7 @@ class PacientesController < ApplicationController
 
   private
     def paciente_params
-      params.require(:paciente).permit(:nome_completo, :data_nascimento, :cpf, :email)
+      params.require(:paciente).permit(:nome_completo, :data_nascimento, :cpf, :email, :endereco_attributes =>[:cep, :cidade, :bairro, :logradouro, :complemento])
 
     end
 end
