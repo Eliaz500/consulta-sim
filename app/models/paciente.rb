@@ -1,6 +1,10 @@
 class Paciente < ApplicationRecord
-  validates :nome_completo, presence: true, length: { minimum: 15}
-  validates :data_nascimento, presence: true, length: { minimum: 10}
-  validates :cpf, presence: true, length: { minimum: 11}
-  validates :email, presence: true, length: { minimum: 15}
+  has_one :endereco
+
+  accepts_nested_attributes_for :endereco , update_only: true
+
+  validates :nome_completo, presence: true, length: { minimum: 3}
+  validates :data_nascimento, presence: true, length: { minimum: 3}
+  validates :cpf, presence: true, length: { minimum: 3}
+  validates :email, presence: true, length: { minimum: 3}
 end

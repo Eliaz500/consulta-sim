@@ -39,6 +39,33 @@
     <% end %>
   </div>
 
+  <%= form.fields_for :endereco do |formu| %>
+    <div>
+      <%= formu.label :cep %><br>
+      <%= formu.text_field :cep %>
+    </div>
+    <div>
+      <%= formu.label :cidade %><br>
+      <%= formu.text_field :cidade %>
+    </div>
+
+    <div>
+      <%= formu.label :bairro %><br>
+      <%= formu.text_field :bairro %>
+    </div>
+
+    <div>
+      <%= formu.label :logradouro %><br>
+      <%= formu.text_field :logradouro %>
+    </div>
+
+    <div>
+      <%= formu.label :complemento %><br>
+      <%= formu.text_field :complemento %>
+    </div>
+
+  <% end %>
+
   <div>
     <br><%= form.submit %>
   </div>
