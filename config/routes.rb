@@ -5,4 +5,5 @@ Rails.application.routes.draw do
     resources :enderecos
   end
   resources :medicos
+  resources :consulta_medicas
 end

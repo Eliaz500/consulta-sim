@@ -1,0 +1,26 @@
+<%= form_with model: consulta_medica do |form| %>
+  <div>
+    <%= form.label :data %><br>
+    <%= form.text_field :data %>
+    <% consulta_medica.errors.full_messages_for(:data).each do |message| %>
+    <div>
+      <%= message %>
+    </div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :horario %><br>
+    <%= form.text_field :horario%>
+    <% consulta_medica.errors.full_messages_for(:horario).each do |message| %>
+      <div>
+        <%= message %>
+      </div>
+    <% end %>
+  </div>
+
+  <div>
+    <br><%= form.submit %>
+  </div>
+<% end %>
+
