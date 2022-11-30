@@ -1,0 +1,11 @@
+<h1>Consultas Médicas</h1>
+
+<ul>
+  <% @consulta_medicas.each do |consulta_medica| %>
+       <li>
+         <%= link_to consulta_medica.data, consulta_medica %>
+       </li>
+  <% end %>
+</ul>
+
+<%= link_to "Nova Consulta Médica", new_consulta_medica_path %>
