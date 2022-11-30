@@ -1,4 +1,7 @@
 <%= form_with model: consulta_medica do |form| %>
+
+  <%= form.collection_select(:pacinte_id, Paciente.all, :id, :nome_completo) %><br>
+
   <div>
     <%= form.label :data %><br>
     <%= form.text_field :data %>
@@ -18,6 +21,10 @@
       </div>
     <% end %>
   </div>
+
+  <br><%= form.collection_select(:medico_id, Medico.all, :id, :nome_completo) %>
+
+
 
   <div>
     <br><%= form.submit %>

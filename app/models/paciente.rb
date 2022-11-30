@@ -1,5 +1,6 @@
 class Paciente < ApplicationRecord
   has_one :endereco
+  has_many :consulta_medicas
 
   accepts_nested_attributes_for :endereco , update_only: true
 
