@@ -12,10 +12,6 @@ class ConsultaMedicasController < ApplicationController
   end
 
   def create
-    @paciente = Paciente.find(params[:paciente_id])
-    @consulta_medica = @paciente.consulta_medica.create(comment_params)
-    @medico = Medico.find(params[:medico_id])
-    @consulta_medica = @medica.consulta_medica.create(comment_params)
     @consulta_medica = ConsultaMedica.new(consulta_medica_params)
 
     if @consulta_medica.save
@@ -41,6 +37,6 @@ class ConsultaMedicasController < ApplicationController
 
   private
   def consulta_medica_params
-    params.require(:consulta_medica).permit(:paciente_id, :data, :horario, :medico_id)
+    params.require(:consulta_medica).permit(:data, :horario, :paciente_id, :medico_id)
   end
 end

@@ -1,10 +1,10 @@
 <%= form_with model: consulta_medica do |form| %>
 
-  <%= form.collection_select(:pacinte_id, Paciente.all, :id, :nome_completo) %><br>
+
 
   <div>
     <%= form.label :data %><br>
-    <%= form.text_field :data %>
+    <%= form.date_field :data %>
     <% consulta_medica.errors.full_messages_for(:data).each do |message| %>
     <div>
       <%= message %>
@@ -14,7 +14,7 @@
 
   <div>
     <%= form.label :horario %><br>
-    <%= form.text_field :horario%>
+    <%= form.time_field :horario%>
     <% consulta_medica.errors.full_messages_for(:horario).each do |message| %>
       <div>
         <%= message %>
@@ -22,7 +22,15 @@
     <% end %>
   </div>
 
-  <br><%= form.collection_select(:medico_id, Medico.all, :id, :nome_completo) %>
+  <div>
+    <%= form.label :paciente %>
+  <%= form.collection_select :paciente_id, Paciente.all, :id, :nome_completo %>
+  </div>
+
+  <div>
+    <%= form.label :medico %>
+  <%= form.collection_select :medico_id, Medico.all, :id, :nome_completo %>
+  </div>
 
 
 
