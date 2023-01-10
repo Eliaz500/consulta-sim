@@ -14,7 +14,7 @@
 
   <div>
     <%= form.label :horario %><br>
-    <%= form.time_field :horario%>
+    <%= form.time_field :horario %>
     <% consulta_medica.errors.full_messages_for(:horario).each do |message| %>
       <div>
         <%= message %>

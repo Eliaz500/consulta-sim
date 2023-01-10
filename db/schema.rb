@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_01_09_225716) do
+ActiveRecord::Schema[7.0].define(version: 2023_01_10_201710) do
   create_table "consulta", force: :cascade do |t|
     t.string "data"
     t.string "horario"
@@ -19,8 +19,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_09_225716) do
   end
 
   create_table "consulta_medicas", force: :cascade do |t|
-    t.string "data"
-    t.string "horario"
+    t.date "data"
+    t.time "horario"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "paciente_id"
