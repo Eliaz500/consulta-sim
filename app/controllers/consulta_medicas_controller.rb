@@ -37,6 +37,6 @@ class ConsultaMedicasController < ApplicationController
 
   private
   def consulta_medica_params
-    params.require(:consulta_medica).permit(:data, :horario)
+    params.require(:consulta_medica).permit(:data, :horario, :paciente_id, :medico_id)
   end
 end
