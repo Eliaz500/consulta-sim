@@ -6,6 +6,27 @@
 <h3>Especialidade: <%= @medico.especialidade %></h3>
 <h3>CRM: <%= @medico.crm %></h3>
 
+<% if @consultas_agendadas.present? %>
+  <h2>Consultas agendadas</h2>
+  <table>
+    <tr>
+      <th>Data</th>
+      <th>Paciente</th>
+      <th>Estado</th>
+    </tr>
+    <% @consultas_agendadas.each do |consulta| %>
+      <tr>
+        <td><%= consulta.data %></td>
+        <td><%= consulta.paciente.nome_completo %></td>
+        <td><%= consulta.status %></td>
+      </tr>
+    <% end %>
+  </table>
+<% else %>
+  <p>Não há consultas agendadas para esse médico.</p>
+<% end %>
+
+
 <ul>
   <li>
     <%= link_to "Editar", edit_medico_path(@medico) %>

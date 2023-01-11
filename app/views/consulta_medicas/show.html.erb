@@ -4,6 +4,7 @@
 <h3>Horário: <%= @consulta_medica.horario %></h3>
 <h3>Paciente: <%= @consulta_medica.paciente.nome_completo %></h3>
 <h3>Médico: <%= @consulta_medica.medico.nome_completo %></h3>
+<h3>Status: <%= @consulta_medica.status %></h3>
 
 <%= link_to "Voltar", consulta_medicas_url %>
 <%= link_to "Editar", edit_consulta_medica_path(@consulta_medica)%>
