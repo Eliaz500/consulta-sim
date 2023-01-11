@@ -4,10 +4,12 @@ class MedicosController < ApplicationController
   end
   def show
     @medico = Medico.find(params[:id])
+    @consultas_agendadas = @medico.consulta_medicas.where(status: 'agendada')
   end
 
   def new
     @medico = Medico.new
+
   end
 
   def create
