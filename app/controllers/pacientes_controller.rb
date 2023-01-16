@@ -5,6 +5,13 @@ class PacientesController < ApplicationController
 
   def show
     @paciente = Paciente.find(params[:id])
+    @cpf_formatado = @paciente.cpf.to_s.gsub(/(\d{3})(\d{3})(\d{3})(\d{2})/, '\1.\2.\3-\4')
+    @data_formatada = @paciente.data_nascimento.strftime("%d-%m-%Y")
+    @cep_formatado = @paciente.endereco.cep.insert(5, '-')
+    @cidade_formatada = @paciente.endereco.cidade.mb_chars.titleize.to_s
+    @bairro_formatado = @paciente.endereco.bairro.mb_chars.titleize.to_s
+    @logradouro_formatado = @paciente.endereco.logradouro.mb_chars.titleize.to_s
+    @complemento_formatado = @paciente.endereco.complemento.mb_chars.titleize.to_s
   end
 
   def new

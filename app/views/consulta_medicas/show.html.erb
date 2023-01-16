@@ -1,7 +1,7 @@
 <h1>Consulta</h1>
 
-<h3>Data: <%= @consulta_medica.data %></h3>
-<h3>Horário: <%= @consulta_medica.horario %></h3>
+<h3>Data: <%= @data_formatada %></h3>
+<h3>Horário: <%= @consulta_medica.horario.strftime("%H:%M") %></h3>
 <h3>Paciente: <%= @consulta_medica.paciente.nome_completo %></h3>
 <h3>Médico: <%= @consulta_medica.medico.nome_completo %></h3>
 <h3>Status: <%= @consulta_medica.status %></h3>

@@ -4,7 +4,8 @@ class MedicosController < ApplicationController
   end
   def show
     @medico = Medico.find(params[:id])
-    @consultas_agendadas = @medico.consulta_medicas.where(status: 'agendada')
+    @cpf_formatado = @medico.cpf.to_s.gsub(/(\d{3})(\d{3})(\d{3})(\d{2})/, '\1.\2.\3-\4')
+    @consultas_agendadas = @medico.consulta_medicas.where(status: 'Agendada')
   end
 
   def new

@@ -5,6 +5,7 @@ class ConsultaMedicasController < ApplicationController
 
   def show
     @consulta_medica = ConsultaMedica.find(params[:id])
+    @data_formatada = @consulta_medica.data.strftime("%d-%m-%Y")
   end
 
   def new
