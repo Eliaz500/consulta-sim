@@ -11,7 +11,7 @@
 
   <div>
     <%= form.label :data_nascimento %><br>
-    <%= form.text_field :data_nascimento %>
+    <%= form.date_field :data_nascimento %>
     <% paciente.errors.full_messages_for(:data_nascimento).each do |message| %>
       <div>
         <%= message %>
@@ -43,6 +43,11 @@
     <div>
       <%= formu.label :cep %><br>
       <%= formu.text_field :cep %>
+      <% paciente.errors[:endereco_attributes].each do |message| %>
+        <div>
+          <%= message %>
+        </div>
+  <% end %>
     </div>
     <div>
       <%= formu.label :cidade %><br>

@@ -3,7 +3,7 @@
 <ul>
   <% @consulta_medicas.each do |consulta_medica| %>
        <li>
-         <%= link_to consulta_medica.data, consulta_medica %>
+         <%= link_to consulta_medica.data.strftime("%d-%m-%Y"), consulta_medica %>
        </li>
   <% end %>
 </ul>
