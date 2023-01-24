@@ -10,7 +10,7 @@ class Paciente < ApplicationRecord
 
 
   validates :cpf, presence: true, uniqueness: true, length: { minimum: 11 , maximum: 11}, format: { with: /\A\d{11,11}\z/}
-  validates :email, presence: true, uniqueness: true, length: { minimum: 4, maximum: 20}, format: { with: /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.com\z/i }
+  validates :email, presence: true, uniqueness: true, length: { minimum: 4, maximum: 30}, format: { with: /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.com\z/i }
 
   def data_nascimento_validation
     if data_nascimento.present? && data_nascimento > Date.today
