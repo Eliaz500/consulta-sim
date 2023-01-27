@@ -11,21 +11,16 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2023_01_14_143119) do
-  create_table "consulta", force: :cascade do |t|
-    t.string "data"
-    t.string "horario"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "consulta_medicas", force: :cascade do |t|
     t.date "data"
     t.time "horario"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.integer "paciente_id"
     t.integer "medico_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string "status"
+    t.index ["medico_id"], name: "index_consulta_medicas_on_medico_id"
+    t.index ["paciente_id"], name: "index_consulta_medicas_on_paciente_id"
   end
 
   create_table "enderecos", force: :cascade do |t|
@@ -59,5 +54,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_01_14_143119) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "consulta_medicas", "medicos"
+  add_foreign_key "consulta_medicas", "pacientes"
   add_foreign_key "enderecos", "pacientes"
 end

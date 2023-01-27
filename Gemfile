@@ -69,4 +69,9 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
   gem "webdrivers"
+  #Adiciona o cucumber
+  gem 'cucumber-rails',:require => false
+  gem 'database_cleaner' #Limpa o banco
+  gem 'rspec-rails' # library of Rails assertions
+  gem 'launchy'
 end
