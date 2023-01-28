@@ -24,6 +24,6 @@ Feature: CRUD do Medico
   Scenario: Editar medico
     Given estou na tela do Medicos "Dr Araujo"
     And clico em editar
-    When eu preencho os campos de Nome com "Dr Araujo Farias"
+    When eu preencho o campo do nome do medico com "Dr Araujo Farias"
     And clico em Update Medico
     Then Eu vejo os dados do medico com o novo nome "Dr Araujo Farias"
